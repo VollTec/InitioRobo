@@ -1,4 +1,4 @@
-# Avoider code with Keyboard control for Initio 4WD Robot with RoboHat Board
+# BETA Avoider code with Keyboard control for Initio 4WD Robot with RoboHat Board
 # Uses Left & Right obstacle sensors to avoid objects 
 # 
 # Speed can be controlled using "," & "." keys

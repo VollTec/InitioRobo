@@ -10,7 +10,7 @@ import robohat, time
 
 #===================================================================
 # Reading single character by forcing stdin to raw mode
-#=========================================
+#===================================================================
 import sys
 import tty
 import termios
@@ -37,7 +37,7 @@ def readkey(getchar_fn=None):
         return c1
     c3 = getchar()
     return chr(0x10 + ord(c3) - 65)  # 16=Up, 17=Down, 18=Right, 19=Left arrows
-#=========================================
+#======================================================================
 # End of single character reading
 #======================================================================
 
@@ -67,7 +67,7 @@ try:
 			time.sleep(0.5)
 			robohat.forward(speed)
 			time.sleep(1)
-			print 'I detected something on the left, course adjusted'
+			print 'I detected an object on the left, course adjusted'
 			print 'My current speed is', speed
         elif robohat.irRight():
 			robohat.reverse(speed)
@@ -76,7 +76,7 @@ try:
 			time.sleep(0.5)
 			robohat.forward(speed)
 			time.sleep(1)
-			print 'I detected something on the right, course adjusted'
+			print 'I detected an object on the right, course adjusted'
 			print 'My current speed is', speed
 			if keyp == 'w' or ord(keyp) == 16:
             robohat.forward(speed)

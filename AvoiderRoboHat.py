@@ -3,7 +3,7 @@
 # 
 # Speed can be controlled using "," & "." keys
 #
-# Marc Voller (VollTec) Feb 2016
+# Marc Voller (VollTec) Jan 2025
 
 
 import robohat, time
@@ -50,40 +50,42 @@ print "Press Ctrl-C to end"
 print
 
 robohat.init()
+print 'Robot initialised'
 
 # main loop
 try:
     while True:
         keyp = readkey()
-        if robohat.irLeft():
-			robohat.reverse(speed)
-			time.sleep(1)
-			robohat.spinRight(speed)
-			time.sleep(0.5)
-			robohat.forward(speed)
-			time.sleep(1)
-			print 'I detected something on the left, course adjusted'
-			print 'My current speed is', speed
-        elif robohat.irRight():
-			robohat.reverse(speed)
-			time.sleep(1)
-			robohat.spinLeft(speed)
-			time.sleep(0.5)
-			robohat.forward(speed)
-			time.sleep(1)
-			print 'I detected something on the right, course adjusted'
-			print 'My current speed is', speed
+	print 'Key pressed:", keyp
+	if robohat.irLeft():
+		robohat.reverse(speed)
+		time.sleep(1)
+		robohat.spinRight(speed)
+    		time.sleep(0.5)
+    		robohat.forward(speed)
+    		time.sleep(1)
+    		print 'I detected something on the left, course adjusted'
+    		print 'My current speed is', speed
+	elif robohat.irRight():
+    		robohat.reverse(speed)
+    		time.sleep(1)
+    		robohat.spinLeft(speed)
+    		time.sleep(0.5)
+    		robohat.forward(speed)
+    		time.sleep(1)
+    		print 'I detected something on the right, course adjusted'
+    		print 'My current speed is', speed
         elif keyp == '.' or keyp == '>':
-            speed = min(100, speed+5)
-            print 'Speed+', speed
+            	speed = min(100, speed+5)
+            	print 'Speed+', speed
         elif keyp == ',' or keyp == '<':
-            speed = max (0, speed-5)
-            print 'Speed-', speed
+            	speed = max (0, speed-5)
+            	print 'Speed-', speed
         elif keyp == ' ':
-            robohat.stop()
-            print 'Stop'
+            	robohat.stop()
+            	print 'Stop'
         elif ord(keyp) == 3:
-            break
+            	break
 
 except KeyboardInterrupt:
     print

@@ -56,7 +56,7 @@ print 'Robot initialised'
 try:
     while True:
         keyp = readkey()
-	print 'Key pressed:", keyp
+	print 'Key pressed:', keyp
 	if robohat.irLeft():
 		robohat.reverse(speed)
 		time.sleep(1)
